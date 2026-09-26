@@ -1,0 +1,70 @@
+<% layout("layouts/boilerplate") %>
+    <body>
+         <div id="filters">
+            <div class="filter">
+                <div><i class="fa-solid fa-fire"></i></div>
+                <p>Trending</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-bed"></i></div>
+                <p>Rooms</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-regular fa-building"></i></div>
+                <p>Iconic cities</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-mountain-sun"></i></div>
+                <p>Mountain</p>
+            </div>
+             <div class="filter">
+                <div><i class="fa-brands fa-fort-awesome"></i></div>
+                <p>Castle</p>
+            </div>
+             <div class="filter">
+                <div><i class="fa-solid fa-person-swimming"></i></div>
+                <p>Swiming pool</p>
+            </div>
+             <div class="filter">
+                <div><i class="fa-solid fa-tractor"></i></div>
+                <p>Farms</p>
+            </div>
+             <div class="filter">
+                <div><i class="fa-solid fa-tents"></i></div>
+                <p>Camping</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-snowflake"></i></div>
+                <p>Arctic</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-panorama"></i></div>
+                <p>Amazing view</p>
+            </div>
+            <div class="filter">
+                <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                <p>Beach</p>
+            </div>
+         </div>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-4">
+            <%for(let listing of allListing){ %>
+                <a href="/listings/<%=listing._id%>" class="listing-link">
+                    <div class="card col">
+                        <img src="<%= listing.image.url %>" class="card-img-top" alt="Listing-image"
+                            style="height: 20rem;">
+                        <div class="card-img-overlay">GO</div>
+                        <div class="card-body ">
+                            <p class="card-text">
+                                <b>
+                                    <%=listing.title%>
+                                </b> <br><br>
+                                <%=listing.description%><br><br>
+                                    <b>&#8377;<%= listing.price.toLocaleString("en-IN") %>/night</b>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+                <%}%>
+        </div>
+
+    </body>
